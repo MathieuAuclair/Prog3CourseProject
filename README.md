@@ -1,6 +1,8 @@
 # Project repository
 this repository contain our final project for our programming course. This markdown contains all the project specification and all the procedure for the git flow. This repository only work with pull request, the branch master is blocked for everyone, and all push toward master will be refused without code review
 
+[![Build Status](https://travis-ci.org/MathieuAuclair/Prog3CourseProject.svg?branch=master)](https://travis-ci.org/MathieuAuclair/Prog3CourseProject)
+
 ## CommandLine setup
 
 ```bash
