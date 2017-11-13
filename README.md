@@ -44,4 +44,4 @@ for remote co-working
 [Discord](https://discordapp.com/invite/TCRwSFc)
 
 ## Information
-[logo]:(https://github.com/MathieuAuclair/Prog3CourseProject/blob/gh-page/indication.jpg)
+![image](https://github.com/MathieuAuclair/Prog3CourseProject/blob/gh-page/indication.jpg)
