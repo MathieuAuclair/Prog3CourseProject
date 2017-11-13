@@ -1,0 +1,10 @@
+
+#Vi/Vim
+*.swp
+
+#intelliJ
+.idea/*
+
+#.NET
+bin/
+obj/
