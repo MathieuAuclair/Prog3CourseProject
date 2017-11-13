@@ -31,7 +31,7 @@ git push origin {branchName}
 ##### To make a pull request, you need to:
 * create your own branch with the name of your feature. 
 * push the branch to the github project
-* you go on [GitHub]() in the branch section
+* you go on [GitHub](https://github.com/MathieuAuclair/Prog3CourseProject/branches) in the branch section
 * use the compare button to create the pull request
 * set a title and a message
 * wait for a code review
@@ -41,4 +41,7 @@ git push origin {branchName}
 
 ## Communication
 for remote co-working
-* [Discord](https://discordapp.com/invite/TCRwSFc)
+[Discord](https://discordapp.com/invite/TCRwSFc)
+
+## Information
+[logo]:(https://github.com/MathieuAuclair/Prog3CourseProject/blob/gh-page/indication.jpg)
