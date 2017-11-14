@@ -7,7 +7,7 @@ namespace FinalProject
     {
         public static void Main(string[] args)
         {
-            //Git is shit!
+            //Git is good!
         }
     }
 }
