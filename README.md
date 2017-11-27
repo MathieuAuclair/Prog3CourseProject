@@ -47,3 +47,4 @@ for remote co-working
 
 ## Information
 ![image](https://github.com/MathieuAuclair/Prog3CourseProject/blob/gh-page/indication.jpg)
+![image](https://github.com/MathieuAuclair/Prog3CourseProject/blob/gh-page/directions.jpg)
