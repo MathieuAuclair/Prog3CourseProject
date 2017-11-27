@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FinalProject.Properties;
 
 namespace FinalProject
 {
@@ -7,7 +8,8 @@ namespace FinalProject
     {
         public static void Main(string[] args)
         {
-            //Git is good!
+            RecyclingStation recyclingStation = new RecyclingStation(0);
+            //Git is so good!
         }
     }
 }

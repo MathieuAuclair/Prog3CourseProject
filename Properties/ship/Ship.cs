@@ -16,11 +16,6 @@ namespace FinalProject.Properties
         public Ship NextShip;
         public Ship PreviousShip;
 
-        public Ship() : this(null, null)
-        {
-            //Override constructor
-        }
-
         public Ship(Ship nextShip, Ship previousShip)
         {
             NextShip = nextShip;
