@@ -45,3 +45,4 @@ for remote co-working
 
 ## Information
 [logo]:(https://github.com/MathieuAuclair/Prog3CourseProject/blob/gh-page/indication.jpg)
+[logo]:(https://github.com/MathieuAuclair/Prog3CourseProject/blob/gh-page/directions.jpg)
