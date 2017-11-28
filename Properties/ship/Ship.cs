@@ -23,7 +23,7 @@ namespace FinalProject.Properties
 
             while (getQuantityOfMatterCrate() <= Capacity)
             {
-                switch (RandomGenerator.getRandomInt())
+                switch (RandomGenerator.getRandomInt(0,5))
                 {
                     case (int) Matter.MatterType.PLUTONIUM:
                         // assign
