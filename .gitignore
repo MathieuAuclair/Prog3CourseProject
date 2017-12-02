@@ -8,6 +8,8 @@
 #.NET
 bin/
 obj/
+FinalProject.csproj
 
 #visual studio
 .vs/
+

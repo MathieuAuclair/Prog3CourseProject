@@ -2,13 +2,13 @@
 {
     public class EvenSortingCenter : SortingCenter
     {
-        public EvenSortingCenter(int waitingLineSize) : this(waitingLineSize, null, null)
+        public EvenSortingCenter(int waitingLineSize) : this(waitingLineSize, null)
         {
             // Override constructor
         }
 
-        public EvenSortingCenter(int WaitingLineSize, SortingCenter nextCenter, SortingCenter previousCenter) :
-            base(WaitingLineSize, nextCenter, nextCenter)
+        public EvenSortingCenter(int WaitingLineSize, SortingCenter previousCenter) :
+            base(WaitingLineSize, previousCenter)
         {
             plutoniumCapacity = 1003;
             uraniumCapacity = 857;
