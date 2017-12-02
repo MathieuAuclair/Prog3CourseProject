@@ -17,7 +17,7 @@ namespace FinalProject.Properties
 
         public SortingCenter(
             int NumberOfShips, 
-            SortingCenter nextCenter)
+            SortingCenter previousCenter)
         {
             this.NumberOfShips = NumberOfShips;
 
@@ -28,10 +28,20 @@ namespace FinalProject.Properties
                 switch (RandomGenerator.getRandomInt(0, 2))
                 {
                     case (int) CARGO_SHIP:
-                        CargoShip UnCargo = new CargoShip();
+                        if (shipWaitingLine.PreviousShip != null)
+                        {
+                            Ship currentShip = shipWaitingLine;
+                            shipWaitingLine = new CargoShip(null, currentShip);
+                            currentShip.NextShip = shipWaitingLine;
+                        }
                         break;
                     case (int) LIGHT_SHIP:
-                        // assign
+                        if (shipWaitingLine.PreviousShip != null)
+                        {
+                            Ship currentShip = shipWaitingLine;
+                            shipWaitingLine = new LightShip(null, currentShip);
+                            currentShip.NextShip = shipWaitingLine;
+                        }
                         break;
                 }
             }
@@ -39,14 +49,33 @@ namespace FinalProject.Properties
 
         public int getQuantityOfShipWaiting()
         {
-            //need to make a loop that count the length
-            return 0;
+            resetShipPile();
+            int count = 0;
+            while (shipWaitingLine.NextShip != null)
+            {
+                count++;
+            }
+            return count;
         }
 
         public Matter getShipAtIndex(int index)
         {
-            //need to make a loop that count the length
+            resetShipPile();
+            for (int i = 0; i < index; i++)
+            {
+                Ship currentShip = shipWaitingLine;
+                shipWaitingLine = currentShip.NextShip;
+            }
             return new Plutonium();
+        }
+
+
+        private void resetShipPile()
+        {
+             while (shipWaitingLine.PreviousShip != null)
+            {
+                Ship previousShip = shipWaitingLine.PreviousShip;
+            }
         }
     }
 }

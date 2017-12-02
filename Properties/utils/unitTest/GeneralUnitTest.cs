@@ -6,9 +6,10 @@ namespace FinalProject.Properties.unitTest
     public class GeneralUnitTest
     {
         [Test]
-        public void AssertionExample()
+        public void SortingCenterShipGenerator()
         {
-            Assert.AreEqual(1, 1);
+            EvenSortingCenter sortingCenter = new EvenSortingCenter(200, null);
+            Assert.AreEqual(1,1);
         }
     }
 }

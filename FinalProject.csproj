@@ -52,6 +52,7 @@
     <Compile Include="Properties\matter\Matter.cs" />
     <Compile Include="Properties\matter\Plutonium.cs" />
     <Compile Include="Properties\matter\Uranium.cs" />
+    <Compile Include="Properties\RecyclingStation.cs" />
     <Compile Include="Properties\ship\CargoShip.cs" />
     <Compile Include="Properties\ship\LightShip.cs" />
     <Compile Include="Properties\ship\Ship.cs" />
@@ -60,7 +61,6 @@
     <Compile Include="Properties\sortingCenter\SortingCenter.cs" />
     <Compile Include="Properties\utils\unitTest\GeneralUnitTest.cs" />
     <Compile Include="Properties\utils\RandomGenerator.cs" />
-    <Compile Include="Properties\utils\RecyclingStation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
