@@ -8,8 +8,18 @@ namespace FinalProject
     {
         public static void Main(string[] args)
         {
-            RecyclingStation recyclingStation = new RecyclingStation(0);
-            //Git is so good!
+            Console.WindowHeight = 9;
+            Console.WindowWidth = 66;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.Title = "GESTION DE DÉCHET";
+
+            FinalProject.Properties.Menu.Menu UnBeauMenu = new Properties.Menu.Menu();
+            UnBeauMenu.Start();
+            Console.ReadKey();
+            
         }
     }
 }
