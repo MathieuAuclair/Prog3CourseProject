@@ -41,6 +41,9 @@ git push origin {branchName}
 #### Here's a video on how to make a pull request
 [youtube video](https://youtu.be/rgbCcBNZcdQ?t=2m11s)
 
+#### Delegates examples
+[youtube video](https://www.youtube.com/watch?v=G5R4C8BLEOc)
+
 ## Communication
 for remote co-working
 [Discord](https://discordapp.com/invite/TCRwSFc)
