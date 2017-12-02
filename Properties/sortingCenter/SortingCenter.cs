@@ -13,21 +13,22 @@ namespace FinalProject.Properties
 
         protected Ship shipWaitingLine;
 
-        protected int waitingLineSize;
+        protected int NumberOfShips;
 
         public SortingCenter(
-            int waitingLineSize, 
-            SortingCenter nextCenter, 
-            SortingCenter previousCenter)
+            int NumberOfShips, 
+            SortingCenter nextCenter)
         {
-            this.waitingLineSize = waitingLineSize;
+            this.NumberOfShips = NumberOfShips;
 
-            for (int i = 0; i < waitingLineSize; i++)
+            //Create a amounts of ships
+
+            for (int i = 0; i < NumberOfShips; i++)
             {
                 switch (RandomGenerator.getRandomInt(0, 2))
                 {
                     case (int) CARGO_SHIP:
-                        // assign
+                        CargoShip UnCargo = new CargoShip();
                         break;
                     case (int) LIGHT_SHIP:
                         // assign

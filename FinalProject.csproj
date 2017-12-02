@@ -61,7 +61,7 @@
     <Compile Include="Properties\sortingCenter\EvenSortingCenter.cs" />
     <Compile Include="Properties\sortingCenter\OddSortingCenter.cs" />
     <Compile Include="Properties\sortingCenter\SortingCenter.cs" />
-    <Compile Include="Properties\unitTest\GeneralUnitTest.cs" />
+    <Compile Include="Properties\utils\unitTest\GeneralUnitTest.cs" />
     <Compile Include="Properties\utils\RandomGenerator.cs" />
     <Compile Include="Properties\utils\RecyclingStation.cs" />
   </ItemGroup>
