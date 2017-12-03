@@ -1,4 +1,5 @@
 ﻿using System.Runtime.Serialization.Formatters;
+using NUnit.Framework.Constraints;
 
 namespace FinalProject.Properties
 {
@@ -20,7 +21,10 @@ namespace FinalProject.Properties
         {
             NextShip = nextShip;
             PreviousShip = previousShip;
+        }
 
+        protected void FillShipWithMatter()
+        {
             while (getQuantityOfMatterCrate() <= Capacity)
             {
                 switch (RandomGenerator.getRandomInt(0,5))
@@ -43,6 +47,7 @@ namespace FinalProject.Properties
                 }
             }
         }
+
 
         public int getQuantityOfMatterCrate()
         {

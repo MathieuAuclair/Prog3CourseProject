@@ -10,6 +10,7 @@
         public LightShip(Ship nextShip, Ship previousShip) : base(nextShip, previousShip)
         {
             Capacity = 108;
+            FillShipWithMatter();
         }
     }
 }

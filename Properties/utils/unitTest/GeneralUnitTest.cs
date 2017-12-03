@@ -10,8 +10,8 @@ namespace FinalProject.Properties.unitTest
         {
             int countOfIteration = 500;
 
-            for (int i = 0; i < countOfIteration; i++)
-            {
+            //for (int i = 0; i < countOfIteration; i++)
+            //{
                 int countOfGeneratedShip  = RandomGenerator.getRandomInt(1, 500);
                 EvenSortingCenter sortingCenter = new EvenSortingCenter(countOfGeneratedShip, null);
                 Ship ship = sortingCenter.getShipAtIndex(countOfGeneratedShip);
@@ -21,7 +21,7 @@ namespace FinalProject.Properties.unitTest
 
                 //the quantity of ship should be equal as we previously entered
                 Assert.AreEqual(sortingCenter.getQuantityOfShipWaiting(), countOfGeneratedShip);
-            }
+            //}
         }
     }
 }
