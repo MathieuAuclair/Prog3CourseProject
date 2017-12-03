@@ -24,20 +24,20 @@ namespace FinalProject.Properties.unitTest
 
             for (int i = 0; i < iterationCount; i++)
             {
-                int countOfShip = RandomGenerator.getRandomInt(1, 1000);
+                int countOfShip = RandomGenerator.getRandomInt(3, 4);
                 SortingCenter sortingCenter = new OddSortingCenter(countOfShip, null);
                 Assert.AreEqual(sortingCenter.getQuantityOfShipWaiting(), countOfShip);
             }
         }
 
-/*
+
         [Test]
         public void SortingCenterShipGenerator()
         {
             int countOfIteration = 500;
 
-            //for (int i = 0; i < countOfIteration; i++)
-            //{
+            for (int i = 0; i < countOfIteration; i++)
+            {
                 int countOfGeneratedShip  = RandomGenerator.getRandomInt(1, 500);
                 EvenSortingCenter sortingCenter = new EvenSortingCenter(countOfGeneratedShip, null);
                 Ship ship = sortingCenter.getShipAtIndex(countOfGeneratedShip);
@@ -46,9 +46,9 @@ namespace FinalProject.Properties.unitTest
                 Assert.AreNotEqual(ship, null);
 
                 //the quantity of ship should be equal as we previously entered
-                Assert.AreEqual(sortingCenter.getQuantityOfShipWaiting(), countOfGeneratedShip);
-            //}
+                int countOfShip = sortingCenter.getQuantityOfShipWaiting();
+                Assert.AreEqual(countOfShip, countOfGeneratedShip);
+            }
         }
-        */
     }
 }

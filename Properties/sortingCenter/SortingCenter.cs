@@ -75,7 +75,8 @@ namespace FinalProject.Properties
         {
             while (shipWaitingLine.PreviousShip != null)
             {
-                shipWaitingLine = shipWaitingLine.PreviousShip;
+                Ship ship = shipWaitingLine;
+                shipWaitingLine = ship.PreviousShip;
             }
         }
     }

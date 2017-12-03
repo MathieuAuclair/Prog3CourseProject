@@ -10,7 +10,6 @@ namespace FinalProject
         {
             RecyclingStation recyclingStation = new RecyclingStation(0);
             //Git is so good!
-            
         }
     }
 }
