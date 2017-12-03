@@ -7,6 +7,10 @@ namespace FinalProject.Properties.Menu
 {
     public class Menu
     {
+        public void whileRunning()
+        {
+            Console.WriteLine("Step 1 : {0}");
+        }
         private static void ValidateNumber(string std)
         {
             Regex regex = new Regex("^([1-9][0-9]{0,2}|1000)$");
@@ -113,11 +117,11 @@ namespace FinalProject.Properties.Menu
             Console.WriteLine("-------------------------------------                        ");
             Console.WriteLine("Processing...                                                ");
 
+            //return (nbofsites,nbofships)
+            //call creation avec valeur (nbofsites,nbofships) //(nombre de sites,nombre de vaisseau)
+            //whileRunning();
 
             Console.ReadKey();
-            // Call Creation of Both Sites and ships
-            
-
         }
         
     }

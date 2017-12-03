@@ -18,7 +18,12 @@ namespace FinalProject
 
             FinalProject.Properties.Menu.Menu UnBeauMenu = new Properties.Menu.Menu();
             UnBeauMenu.Start();
+            
+
+            
             Console.ReadKey();
+
+
             
         }
     }
