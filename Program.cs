@@ -8,7 +8,7 @@ namespace FinalProject
     {
         public static void Main(string[] args)
         {
-            Console.WindowHeight = 9;
+            Console.WindowHeight = 10;
             Console.WindowWidth = 66;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.Clear();
