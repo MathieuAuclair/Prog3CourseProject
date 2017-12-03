@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.Serialization.Formatters;
 using NUnit.Framework.Constraints;
 
@@ -26,6 +27,8 @@ namespace FinalProject.Properties
 
         protected void FillShipWithMatter()
         {
+            LoadContent = new Plutonium(null, null);
+            
             while (getQuantityOfMatterCrate() <= Capacity)
             {
                 switch (RandomGenerator.getRandomInt(0,5))

@@ -6,6 +6,16 @@ namespace FinalProject.Properties.unitTest
     public class GeneralUnitTest
     {
         [Test]
+        public void ShipGenerator()
+        {
+            Ship lightShip = new LightShip();
+            Ship cargoShip = new CargoShip();
+            
+            
+            Assert.AreNotEqual(lightShip.getQuantityOfMatterCrate(), 0);
+        }
+
+        [Test]
         public void SortingCenterShipGenerator()
         {
             int countOfIteration = 500;
