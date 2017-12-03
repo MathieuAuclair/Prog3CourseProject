@@ -11,7 +11,7 @@ namespace FinalProject.Properties.unitTest
             Ship lightShip = new LightShip();
             Ship cargoShip = new CargoShip();
             
-            
+            // when we create a new ship it should be filled
             Assert.AreNotEqual(lightShip.getQuantityOfMatterCrate(), 0);
         }
 

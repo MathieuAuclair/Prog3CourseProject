@@ -66,6 +66,7 @@ namespace FinalProject.Properties
             int count = 0;
             while (LoadContent.NextMatterCrate != null)
             {
+                LoadContent = LoadContent.NextMatterCrate;
                 count++;
             }
             
