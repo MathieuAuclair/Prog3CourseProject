@@ -9,7 +9,7 @@ namespace FinalProject.Properties.Menu
     {
         private static void ValidateNumber(string std)
         {
-            Regex regex = new Regex("^[0-9]+$");
+            Regex regex = new Regex("^[0-9][0-9][0-9]$");
 
             if (!regex.IsMatch(std))
                 throw new InvalidNumberException(std);
@@ -50,6 +50,7 @@ namespace FinalProject.Properties.Menu
                 Console.WriteLine("                                                             ");
                 Console.WriteLine("-------------------------------------                        ");
                 Console.WriteLine(ex.Message);
+                
 
                 Console.ReadLine();
 

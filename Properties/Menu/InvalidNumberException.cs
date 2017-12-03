@@ -16,7 +16,7 @@ namespace FinalProject.Properties.Menu
         }
 
         public InvalidNumberException(string nb)
-        : base(String.Format("Ceci n'est pas un nombre: {0}", nb))
+        : base(String.Format("Ceci n'est pas un nombre acceptable: {0}", nb))
     {
 
         }
