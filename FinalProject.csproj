@@ -55,6 +55,7 @@
     <Compile Include="Properties\matter\Matter.cs" />
     <Compile Include="Properties\matter\Plutonium.cs" />
     <Compile Include="Properties\matter\Uranium.cs" />
+    <Compile Include="Properties\Menu\InvalidNumberException.cs" />
     <Compile Include="Properties\Menu\Menu.cs" />
     <Compile Include="Properties\RecyclingStation.cs" />
     <Compile Include="Properties\ship\CargoShip.cs" />
