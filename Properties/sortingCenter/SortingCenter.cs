@@ -21,6 +21,7 @@ namespace FinalProject.Properties
             int NumberOfShips,
             SortingCenter previousCenter)
         {
+            shipWaitingLine = new LightShip(null, null);
             this.NumberOfShips = NumberOfShips;
 
             //Create a amounts of ships

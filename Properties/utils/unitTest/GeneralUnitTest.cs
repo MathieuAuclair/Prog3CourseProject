@@ -13,8 +13,11 @@ namespace FinalProject.Properties.unitTest
             
             // when we create a new ship it should be filled
             Assert.AreNotEqual(lightShip.getQuantityOfMatterCrate(), 0);
+            Assert.AreEqual(lightShip.getQuantityOfMatterCrate(), 109);
         }
-
+          
+        
+    
         [Test]
         public void SortingCenterShipGenerator()
         {
