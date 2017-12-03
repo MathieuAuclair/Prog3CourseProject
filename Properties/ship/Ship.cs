@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization.Formatters;
+﻿using System.ComponentModel;
+using System.Runtime.Serialization.Formatters;
 using NUnit.Framework.Constraints;
 
 namespace FinalProject.Properties
@@ -30,24 +31,31 @@ namespace FinalProject.Properties
                 switch (RandomGenerator.getRandomInt(0,5))
                 {
                     case (int) Matter.MatterType.PLUTONIUM:
-                        // assign
+                        addMatterCrateToShip(new Plutonium(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.URANIUM:
-                        // assign
+                        addMatterCrateToShip(new Uranium(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.HEAVYMETAL:
-                        // assign
+                        addMatterCrateToShip(new HeavyMetal(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.CONTAMINATED_SOIL:
-                        // assign
+                        addMatterCrateToShip(new ContaminatedSoil(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.FOSSIL_FUEL:
-                        // assign
+                        addMatterCrateToShip(new FossilFuel(null, LoadContent));
                         break;
                 }
             }
         }
 
+        public void addMatterCrateToShip(Matter matter)
+        {
+            Matter oldMatter = LoadContent;
+            oldMatter.NextMatterCrate = matter;
+            LoadContent = matter;
+        }
+        
 
         public int getQuantityOfMatterCrate()
         {
