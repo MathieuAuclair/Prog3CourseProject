@@ -51,10 +51,12 @@ namespace FinalProject.Properties
         public int getQuantityOfShipWaiting()
         {
             resetShipPile();
+            
             int count = 0;
             while (shipWaitingLine.NextShip != null)
             {
                 count++;
+                shipWaitingLine = shipWaitingLine.NextShip;
             }
             return count;
         }
@@ -75,8 +77,7 @@ namespace FinalProject.Properties
         {
             while (shipWaitingLine.PreviousShip != null)
             {
-                Ship ship = shipWaitingLine;
-                shipWaitingLine = ship.PreviousShip;
+                shipWaitingLine = shipWaitingLine.PreviousShip;
             }
         }
     }
