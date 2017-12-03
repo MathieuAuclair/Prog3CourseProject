@@ -30,7 +30,7 @@ namespace FinalProject.Properties.unitTest
             }
         }
 
-
+/*
         [Test]
         public void SortingCenterShipGenerator()
         {
@@ -49,5 +49,6 @@ namespace FinalProject.Properties.unitTest
                 Assert.AreEqual(sortingCenter.getQuantityOfShipWaiting(), countOfGeneratedShip);
             //}
         }
+        */
     }
 }

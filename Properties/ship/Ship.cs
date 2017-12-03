@@ -57,6 +57,7 @@ namespace FinalProject.Properties
             Matter oldMatter = LoadContent;
             oldMatter.NextMatterCrate = matter;
             LoadContent = matter;
+            LoadContent.PreviousMatterCrate = oldMatter;
         }
         
 

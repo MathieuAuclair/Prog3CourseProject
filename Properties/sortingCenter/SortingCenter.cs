@@ -42,17 +42,10 @@ namespace FinalProject.Properties
 
         private void AddNewlyGeneratedShipToPile(Ship ship)
         {
-            if (shipWaitingLine.PreviousShip != null)
-            {
-                Ship currentShip = shipWaitingLine;
-                ship.PreviousShip = currentShip;
-                shipWaitingLine = ship;
-                currentShip.NextShip = shipWaitingLine;
-            }
-            else
-            {
-                shipWaitingLine = ship;
-            }
+            Ship currentShip = shipWaitingLine;
+            currentShip.NextShip = ship;
+            shipWaitingLine = ship;
+            shipWaitingLine.PreviousShip = currentShip;
         }
 
         public int getQuantityOfShipWaiting()
