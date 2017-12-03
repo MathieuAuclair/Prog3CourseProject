@@ -48,6 +48,10 @@ namespace FinalProject.Properties
                 shipWaitingLine = ship;
                 currentShip.NextShip = shipWaitingLine;
             }
+            else
+            {
+                shipWaitingLine = ship;
+            }
         }
 
         public int getQuantityOfShipWaiting()
@@ -75,10 +79,9 @@ namespace FinalProject.Properties
 
         private void resetShipPile()
         {
-            Ship previousShip = shipWaitingLine;
             while (shipWaitingLine.PreviousShip != null)
             {
-                previousShip = shipWaitingLine.PreviousShip;
+                shipWaitingLine = shipWaitingLine.PreviousShip;
             }
         }
     }

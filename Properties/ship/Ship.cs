@@ -46,8 +46,14 @@ namespace FinalProject.Properties
 
         public int getQuantityOfMatterCrate()
         {
-            //need to make a loop that count the length
-            return 0;
+            resetStockPile();
+            int count = 0;
+            while (LoadContent.NextMatterCrate != null)
+            {
+                count++;
+            }
+            
+            return count;
         }
 
         public Ship getMatterAtIndex(int index)
@@ -55,5 +61,13 @@ namespace FinalProject.Properties
             //need to make a loop that count the length
             return new LightShip();
         }
+        
+        private void resetStockPile()
+        {
+            while (LoadContent.PreviousMatterCrate != null)
+            {
+                LoadContent = LoadContent.PreviousMatterCrate;
+            }
+        } 
     }
 }
