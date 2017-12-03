@@ -74,7 +74,7 @@ namespace FinalProject.Properties
                 Ship currentShip = shipWaitingLine;
                 shipWaitingLine = currentShip.NextShip;
             }
-            return new CargoShip();
+            return shipWaitingLine;
         }
 
 

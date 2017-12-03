@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Runtime.Serialization.Formatters;
+using NUnit.Framework;
 
 namespace FinalProject.Properties.unitTest
 {
@@ -15,9 +16,21 @@ namespace FinalProject.Properties.unitTest
             Assert.AreNotEqual(lightShip.getQuantityOfMatterCrate(), 0);
             Assert.AreEqual(lightShip.getQuantityOfMatterCrate(), 109);
         }
-          
-        
-    
+
+        [Test]
+        public void SortingCenterShipLine()
+        {
+            int iterationCount = 500;
+
+            for (int i = 0; i < iterationCount; i++)
+            {
+                int countOfShip = RandomGenerator.getRandomInt(1, 1000);
+                SortingCenter sortingCenter = new OddSortingCenter(countOfShip, null);
+                Assert.AreEqual(sortingCenter.getQuantityOfShipWaiting(), countOfShip);
+            }
+        }
+
+
         [Test]
         public void SortingCenterShipGenerator()
         {
