@@ -1,4 +1,7 @@
-﻿using System.Runtime.Serialization.Formatters;
+﻿using System;
+using System.ComponentModel;
+using System.Runtime.Serialization.Formatters;
+using NUnit.Framework.Constraints;
 
 namespace FinalProject.Properties
 {
@@ -20,34 +23,55 @@ namespace FinalProject.Properties
         {
             NextShip = nextShip;
             PreviousShip = previousShip;
+        }
 
+        protected void FillShipWithMatter()
+        {
+            LoadContent = new Plutonium(null, null);
+            
             while (getQuantityOfMatterCrate() <= Capacity)
             {
                 switch (RandomGenerator.getRandomInt(0,5))
                 {
                     case (int) Matter.MatterType.PLUTONIUM:
-                        // assign
+                        addMatterCrateToShip(new Plutonium(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.URANIUM:
-                        // assign
+                        addMatterCrateToShip(new Uranium(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.HEAVYMETAL:
-                        // assign
+                        addMatterCrateToShip(new HeavyMetal(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.CONTAMINATED_SOIL:
-                        // assign
+                        addMatterCrateToShip(new ContaminatedSoil(null, LoadContent));
                         break;
                     case (int) Matter.MatterType.FOSSIL_FUEL:
-                        // assign
+                        addMatterCrateToShip(new FossilFuel(null, LoadContent));
                         break;
                 }
             }
         }
 
+        public void addMatterCrateToShip(Matter matter)
+        {
+            Matter oldMatter = LoadContent;
+            oldMatter.NextMatterCrate = matter;
+            LoadContent = matter;
+            LoadContent.PreviousMatterCrate = oldMatter;
+        }
+        
+
         public int getQuantityOfMatterCrate()
         {
-            //need to make a loop that count the length
-            return 0;
+            resetStockPile();
+            int count = 0;
+            while (LoadContent.NextMatterCrate != null)
+            {
+                LoadContent = LoadContent.NextMatterCrate;
+                count++;
+            }
+            
+            return count;
         }
 
         public Ship getMatterAtIndex(int index)
@@ -55,5 +79,13 @@ namespace FinalProject.Properties
             //need to make a loop that count the length
             return new LightShip();
         }
+        
+        private void resetStockPile()
+        {
+            while (LoadContent.PreviousMatterCrate != null)
+            {
+                LoadContent = LoadContent.PreviousMatterCrate;
+            }
+        } 
     }
 }

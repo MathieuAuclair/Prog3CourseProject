@@ -1,4 +1,6 @@
-﻿using System.Threading;
+﻿using System;
+using System.ComponentModel;
+using System.Threading;
 using static FinalProject.Properties.Ship.ShipType;
 
 namespace FinalProject.Properties
@@ -13,39 +15,70 @@ namespace FinalProject.Properties
 
         protected Ship shipWaitingLine;
 
-        protected int waitingLineSize;
+        protected int NumberOfShips;
 
         public SortingCenter(
-            int waitingLineSize, 
-            SortingCenter nextCenter, 
+            int NumberOfShips,
             SortingCenter previousCenter)
         {
-            this.waitingLineSize = waitingLineSize;
+            shipWaitingLine = new LightShip(null, null);
+            this.NumberOfShips = NumberOfShips;
 
-            for (int i = 0; i < waitingLineSize; i++)
+            //Create a amounts of ships
+
+            for (int i = 0; i < NumberOfShips; i++)
             {
                 switch (RandomGenerator.getRandomInt(0, 2))
                 {
                     case (int) CARGO_SHIP:
-                        // assign
+                        AddNewlyGeneratedShipToPile(new CargoShip(null, null));
                         break;
                     case (int) LIGHT_SHIP:
-                        // assign
+                        AddNewlyGeneratedShipToPile(new LightShip(null, null));
                         break;
                 }
             }
         }
 
-        public int getQuantityOfShipWaiting()
+        private void AddNewlyGeneratedShipToPile(Ship ship)
         {
-            //need to make a loop that count the length
-            return 0;
+            Ship currentShip = shipWaitingLine;
+            currentShip.NextShip = ship;
+            shipWaitingLine = ship;
+            shipWaitingLine.PreviousShip = currentShip;
         }
 
-        public Matter getShipAtIndex(int index)
+        public int getQuantityOfShipWaiting()
         {
-            //need to make a loop that count the length
-            return new Plutonium();
+            resetShipPile();
+            
+            int count = 0;
+            while (shipWaitingLine.NextShip != null)
+            {
+                count++;
+                shipWaitingLine = shipWaitingLine.NextShip;
+            }
+            return count;
+        }
+
+        public Ship getShipAtIndex(int index)
+        {
+            resetShipPile();
+            for (int i = 0; i < index; i++)
+            {
+                Ship currentShip = shipWaitingLine;
+                shipWaitingLine = currentShip.NextShip;
+            }
+            return shipWaitingLine;
+        }
+
+
+        private void resetShipPile()
+        {
+            while (shipWaitingLine.PreviousShip != null)
+            {
+                shipWaitingLine = shipWaitingLine.PreviousShip;
+            }
         }
     }
 }
