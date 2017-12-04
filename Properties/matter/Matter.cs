@@ -1,6 +1,8 @@
-﻿namespace FinalProject.Properties
+﻿using FinalProject.Properties.Interface;
+
+namespace FinalProject.Properties
 {
-    public abstract class Matter
+    public abstract class Matter : IMatter
     {
         public enum MatterType
         {

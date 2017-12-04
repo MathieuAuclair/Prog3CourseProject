@@ -1,11 +1,13 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.Runtime.Serialization.Formatters;
+using FinalProject.Properties.Interface;
 using System.Runtime.Serialization.Formatters;
-using NUnit.Framework.Constraints;
+using System.ComponentModel;
+﻿using System;
+
 
 namespace FinalProject.Properties
 {
-    public abstract class Ship
+    public abstract class Ship : IShip
     {
         public enum ShipType
         {
