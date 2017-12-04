@@ -10,6 +10,7 @@
         public CargoShip(Ship nextShip, Ship previouShip) : base(nextShip, previouShip)
         {
             Capacity = 367;
+            FillShipWithMatter();
         }
     }
 }
