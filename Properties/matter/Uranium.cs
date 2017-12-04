@@ -6,6 +6,7 @@ namespace FinalProject.Properties
     {
         public Uranium() : this(null, null)
         {
+            matterInQuestion = (int)MatterType.URANIUM;
             // override constructor
         }
 

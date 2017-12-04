@@ -28,7 +28,7 @@ namespace FinalProject.Properties.Menu
             Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
             Console.WriteLine("        =====================================                        ");
             Console.WriteLine("                                                                     ");
-            Console.WriteLine("        Nombre de site       : ____        PRESS ENTER               ");
+            Console.WriteLine("        Nombre de site       : ____          PRESS ENTER             ");
             Console.WriteLine("                                                                     ");
             Console.WriteLine("        Nombre de vaisseau   : ____                                  ");
             Console.WriteLine("                                                                     ");
@@ -78,7 +78,7 @@ namespace FinalProject.Properties.Menu
             Console.WriteLine("                                                                     ");
             Console.WriteLine("        Nombre de site       : "+nbofsites+"                         ");
             Console.WriteLine("                                                                     ");
-            Console.WriteLine("        Nombre de vaisseau   : ____        PRESS ENTER               ");
+            Console.WriteLine("        Nombre de vaisseau   : ____          PRESS ENTER             ");
             Console.WriteLine("                                                                     ");
             Console.WriteLine("        =====================================                        ");
             Console.WriteLine("        'Saving the fucking universe'                                ");
