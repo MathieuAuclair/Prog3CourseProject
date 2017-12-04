@@ -8,7 +8,7 @@ namespace FinalProject
     {
         public static void Main(string[] args)
         {
-            RecyclingStation recyclingStation = new RecyclingStation(0);
+            RecyclingStation recyclingStation = new RecyclingStation(200);
             //Git is so good!
         }
     }

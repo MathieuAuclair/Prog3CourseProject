@@ -11,7 +11,7 @@ namespace FinalProject.Properties.unitTest
         {
             Ship lightShip = new LightShip();
             Ship cargoShip = new CargoShip();
-            
+
             // when we create a new ship it should be filled
             Assert.AreNotEqual(lightShip.getQuantityOfMatterCrate(), 0);
             Assert.AreEqual(lightShip.getQuantityOfMatterCrate(), 109);
@@ -38,7 +38,7 @@ namespace FinalProject.Properties.unitTest
 
             for (int i = 0; i < countOfIteration; i++)
             {
-                int countOfGeneratedShip  = RandomGenerator.getRandomInt(1, 500);
+                int countOfGeneratedShip = RandomGenerator.getRandomInt(1, 500);
                 EvenSortingCenter sortingCenter = new EvenSortingCenter(countOfGeneratedShip, null);
                 Ship ship = sortingCenter.getShipAtIndex(countOfGeneratedShip);
 
@@ -48,6 +48,24 @@ namespace FinalProject.Properties.unitTest
                 //the quantity of ship should be equal as we previously entered
                 int countOfShip = sortingCenter.getQuantityOfShipWaiting();
                 Assert.AreEqual(countOfShip, countOfGeneratedShip);
+            }
+        }
+
+
+        [Test]
+        public void RecyclingCenterTest()
+        {
+            int iteration = 50;
+
+            for (int i = 0; i < iteration; i++)
+            {
+                int centerGeneration = 200;
+
+                RecyclingStation station = new RecyclingStation(centerGeneration);
+                Assert.AreEqual(station.getQuantityOfStation(), centerGeneration);
+
+                SortingCenter center = station.GetSortingCenterAtIndex(centerGeneration);
+                Assert.AreEqual(center.NextSortingCenter, null);
             }
         }
     }
