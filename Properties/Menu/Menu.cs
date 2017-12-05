@@ -2,12 +2,15 @@
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using FinalProject.Properties;
+using System.Threading;
 
 namespace FinalProject.Properties.Menu
 {
-    public class Menu
+    public static class Menu
     {
-        public void whileRunning()
+        public static int nbofships =0;
+        public static int nbofsites = 0;
+        public static void whileRunning()
         {
             Console.WriteLine("Step 1 : {0}");
         }
@@ -19,21 +22,21 @@ namespace FinalProject.Properties.Menu
                 throw new InvalidNumberException(std);
 
         }
-        public void Start()
+        public static void Start()
         {
-            int nbofsites = 0;
-            int nbofships = 0;
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
-            Console.WriteLine("-------------------------------------                        ");
-            Console.WriteLine("Nombre de site       : ____             PRESS ENTER WHEN DONE");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("Nombre de vaisseau   : ____                                  ");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("-------------------------------------                        ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+            Console.WriteLine("        =====================================                        ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        Nombre de site       : ____          PRESS ENTER             ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        Nombre de vaisseau   : ____                                  ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        =====================================                        ");
+            Console.WriteLine("        'Saving the fucking universe'                                ");
 
 
-            Console.SetCursorPosition(23, 3);
+            Console.SetCursorPosition(31, 4);
 
             //apply regex
             try
@@ -45,14 +48,16 @@ namespace FinalProject.Properties.Menu
             catch (InvalidNumberException ex)
             {
                 Console.Clear();
-                Console.WriteLine("                                                             ");
-                Console.WriteLine("LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
-                Console.WriteLine("-------------------------------------                        ");
-                Console.WriteLine("Nombre de site       : ____             PRESS ENTER WHEN DONE");
-                Console.WriteLine("                                                             ");
-                Console.WriteLine("Nombre de vaisseau   : ____                                  ");
-                Console.WriteLine("                                                             ");
-                Console.WriteLine("-------------------------------------                        ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de site       : " + nbofsites + "                     ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                     ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine("        'Saving the fucking universe'                                ");
                 Console.WriteLine(ex.Message);
                 
 
@@ -67,15 +72,17 @@ namespace FinalProject.Properties.Menu
             
             Console.Clear();
 
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
-            Console.WriteLine("-------------------------------------                        ");
-            Console.WriteLine("Nombre de site       : "+ nbofsites + "                      ");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("Nombre de vaisseau   : ____             PRESS ENTER WHEN DONE");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("-------------------------------------                        ");
-            Console.SetCursorPosition(23, 5);
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+            Console.WriteLine("        =====================================                        ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        Nombre de site       : "+nbofsites+"                         ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        Nombre de vaisseau   : ____          PRESS ENTER             ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        =====================================                        ");
+            Console.WriteLine("        'Saving the fucking universe'                                ");
+            Console.SetCursorPosition(31, 6);
 
             //apply regex
 
@@ -88,14 +95,15 @@ namespace FinalProject.Properties.Menu
             catch (InvalidNumberException ex)
             {
                 Console.Clear();
-                Console.WriteLine("                                                             ");
-                Console.WriteLine("LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
-                Console.WriteLine("-------------------------------------                        ");
-                Console.WriteLine("Nombre de site       : ____             PRESS ENTER WHEN DONE");
-                Console.WriteLine("                                                             ");
-                Console.WriteLine("Nombre de vaisseau   : ____                                  ");
-                Console.WriteLine("                                                             ");
-                Console.WriteLine("-------------------------------------                        ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de site       : " + nbofsites + "                     ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                     ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        =====================================                        ");
                 Console.WriteLine(ex.Message);
 
                 Console.ReadLine();
@@ -105,23 +113,70 @@ namespace FinalProject.Properties.Menu
                 Start();
             }
 
-            Console.Clear();
+            
+            int x = 0;
+            while (x < 25)
+            {
+                if( x % 2 != 1)
+                {
+                    Console.Clear();
 
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
-            Console.WriteLine("-------------------------------------                        ");
-            Console.WriteLine("Nombre de site       : "+ nbofsites + "                      ");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("Nombre de vaisseau   : "+ nbofships + "                      ");
-            Console.WriteLine("                                                             ");
-            Console.WriteLine("-------------------------------------                        ");
-            Console.WriteLine("Processing...                                                ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                    Console.WriteLine("        =====================================                        ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        Nombre de site       : " + nbofsites + "                     ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                     ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        =====================================                        ");
+                    Console.WriteLine("        Processing...                                                ");
+                    Console.WriteLine("                'Saving the fucking universe'                        ");
+                    x++;
+                    Thread.Sleep(75);
+
+                }
+                else
+                {
+                    Console.Clear();
+                  
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                    Console.WriteLine("        =====================================                        ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        Nombre de site       : " + nbofsites + "                     ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                     ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        =====================================                        ");
+                    Console.WriteLine("        Processing.....                                              ");
+                    Console.WriteLine("                'Saving the fucking universe'                        ");
+                    x++;
+                    Thread.Sleep(75);
+
+                }
+
+            }
+
 
             //return (nbofsites,nbofships)
             //call creation avec valeur (nbofsites,nbofships) //(nombre de sites,nombre de vaisseau)
             //whileRunning();
 
-            Console.ReadKey();
+        }
+        public static void speach(string msg)
+        {
+            Console.Clear();
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+            Console.WriteLine("        -------------------------------------                        ");
+            Console.WriteLine("        Nombre de site       : " + nbofsites + "                     ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                     ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        -------------------------------------                        ");
+            Console.WriteLine(msg);         
+
         }
         
     }

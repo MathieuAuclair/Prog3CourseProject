@@ -4,6 +4,7 @@
     {
         public Plutonium() : this(null, null)
         {
+            matterInQuestion = (int)MatterType.PLUTONIUM;
             // override constructor
         }
 

@@ -4,6 +4,7 @@
     {
         public FossilFuel() : this(null, null)
         {
+            matterInQuestion = (int)MatterType.FOSSIL_FUEL;
             // override constructor
         }
 

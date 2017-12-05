@@ -4,6 +4,7 @@
     {
         public ContaminatedSoil() : this(null, null)
         {
+            matterInQuestion = (int)MatterType.CONTAMINATED_SOIL;
             // override constructor
         }
 

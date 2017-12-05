@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FinalProject.Properties;
+using FinalProject.Properties.Menu;
 
 namespace FinalProject
 {
@@ -8,17 +9,17 @@ namespace FinalProject
     {
         public static void Main(string[] args)
         {
-
-            Console.WindowHeight = 10;
+            Console.Title = "GESTION DE DÉCHET";
+            Console.WindowHeight = 12;
             Console.WindowWidth = 66;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
-            Console.Title = "GESTION DE DÉCHET";
 
-            FinalProject.Properties.Menu.Menu UnBeauMenu = new Properties.Menu.Menu();
-            UnBeauMenu.Start();
+            Menu.Start();
+
+            SortingCenter sortingCenter = new OddSortingCenter(FinalProject.Properties.Menu.Menu.nbofships, null);
+            Menu.Start();
             
             Console.ReadKey();
         }

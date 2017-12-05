@@ -12,7 +12,7 @@ namespace FinalProject.Properties
             CONTAMINATED_SOIL,
             FOSSIL_FUEL
         }
-        
+        public int matterInQuestion;
         public int LoadingTime;
 
         public Matter NextMatterCrate;

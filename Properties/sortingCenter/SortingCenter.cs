@@ -34,9 +34,14 @@ namespace FinalProject.Properties
                 switch (RandomGenerator.getRandomInt(0, 2))
                 {
                     case (int) CARGO_SHIP:
+                        Menu.Menu.speach("        ~ ~ ~ ~ ~ Vaisseau Cargo Crée ~ ~ ~ ~ ~         ");
+                        Thread.Sleep(250);
                         AddNewlyGeneratedShipToPile(new CargoShip(null, null));
-                        break;
+                    
+                        break; 
                     case (int) LIGHT_SHIP:
+                        Menu.Menu.speach("        ~ ~ ~ ~ ~ Vaisseau Léger Crée ~ ~ ~ ~ ~         ");
+                        Thread.Sleep(250);
                         AddNewlyGeneratedShipToPile(new LightShip(null, null));
                         break;
                 }
