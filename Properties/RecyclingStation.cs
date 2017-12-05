@@ -14,14 +14,17 @@ namespace FinalProject.Properties
         public RecyclingStation(int stationSize)
         {
             sortingCenters = new EvenSortingCenter(stationSize, null);
+            Menu.Menu.speach("----------Creation d'un centre de tri pair ");
             for (int i = 0; i < stationSize; i++)
             {
                 switch (RandomGenerator.getRandomInt(0,2))
                 {
                     case (int) SortingCenterType.EVEN_CENTER:
+                        Menu.Menu.speach("----------Creation d'un centre de tri pair");
                         AddNewlyGeneratedSortingCenterToPile(new EvenSortingCenter(Menu.Menu.nbofships, null));
                         break;
                     case (int) SortingCenterType.ODD_CENTER:
+                        Menu.Menu.speach("----------Creation d'un centre de tri impair");
                         AddNewlyGeneratedSortingCenterToPile(new OddSortingCenter(Menu.Menu.nbofships , null));
                         break;
                 }

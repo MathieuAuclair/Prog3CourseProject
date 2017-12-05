@@ -8,6 +8,7 @@ namespace FinalProject.Properties.Menu
 {
     public static class Menu
     {
+        public static int nbofShipsPerSites=0;
         public static int nbofships =0;
         public static int nbofsites = 0;
         public static void whileRunning()
@@ -45,7 +46,7 @@ namespace FinalProject.Properties.Menu
 
             Console.SetCursorPosition(31, 4);
 
-            //apply regex
+            // trycatch regex with errormessage
             try
             {
              string data1 = Console.ReadLine();
@@ -91,8 +92,8 @@ namespace FinalProject.Properties.Menu
             Console.WriteLine("        'Saving the fucking universe'                                ");
             Console.SetCursorPosition(31, 6);
 
-            //apply regex
-
+            
+            // trycatch regex with errormessage
             try
             {
                 string data3 = Console.ReadLine();
@@ -162,7 +163,7 @@ namespace FinalProject.Properties.Menu
                     Thread.Sleep(75);
 
                 }
-
+                nbofShipsPerSites = nbofships / nbofsites;
             }
 
 
@@ -182,8 +183,8 @@ namespace FinalProject.Properties.Menu
             Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                     ");
             Console.WriteLine("                                                                     ");
             Console.WriteLine("        -------------------------------------                        ");
-            Console.WriteLine(msg);         
-
+            Console.WriteLine(msg);
+            Thread.Sleep(100);
         }
         
     }
