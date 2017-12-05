@@ -17,6 +17,7 @@ namespace FinalProject.Properties
         public SortingCenter NextSortingCenter;
 
         protected Ship shipWaitingLine;
+        protected Ship shipDepartureLine;
 
         protected int NumberOfShips;
 

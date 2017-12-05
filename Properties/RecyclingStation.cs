@@ -19,10 +19,10 @@ namespace FinalProject.Properties
                 switch (RandomGenerator.getRandomInt(0,2))
                 {
                     case (int) SortingCenterType.EVEN_CENTER:
-                        AddNewlyGeneratedSortingCenterToPile(new EvenSortingCenter(30, null));
+                        AddNewlyGeneratedSortingCenterToPile(new EvenSortingCenter(Menu.Menu.nbofships, null));
                         break;
                     case (int) SortingCenterType.ODD_CENTER:
-                        AddNewlyGeneratedSortingCenterToPile(new OddSortingCenter(30, null));
+                        AddNewlyGeneratedSortingCenterToPile(new OddSortingCenter(Menu.Menu.nbofships , null));
                         break;
                 }
             }
@@ -67,6 +67,14 @@ namespace FinalProject.Properties
             {
                 sortingCenters = sortingCenters.PreviouSortingCenter;
             }
+        }
+
+        public void launchRecyclingProcess(){
+            //need to implement
+        }
+
+        public void processingData(){
+            //need to implement
         }
     }
 }
