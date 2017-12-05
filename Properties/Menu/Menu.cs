@@ -18,8 +18,15 @@ namespace FinalProject.Properties.Menu
         {
             Regex regex = new Regex("^([1-9][0-9]{0,2}|1000)$");
 
-            if (!regex.IsMatch(std))
-                throw new InvalidNumberException(std);
+            if (std != null)
+            {
+                if (regex.IsMatch(std))
+                {
+                    return;
+                }
+            }
+            
+            throw new InvalidNumberException(std);
 
         }
         public static void Start()

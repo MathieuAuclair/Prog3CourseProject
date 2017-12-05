@@ -18,7 +18,7 @@ namespace FinalProject
 
             Menu.Start();
 
-            SortingCenter sortingCenter = new OddSortingCenter(FinalProject.Properties.Menu.Menu.nbofships, null);
+            SortingCenter sortingCenter = new OddSortingCenter(Menu.nbofships, null);
             Menu.Start();
             
             Console.ReadKey();
