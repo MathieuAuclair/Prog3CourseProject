@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FinalProject.Properties;
+using FinalProject.Properties.Menu;
 
 namespace FinalProject
 {
@@ -12,17 +13,15 @@ namespace FinalProject
             Console.WindowHeight = 12;
             Console.WindowWidth = 66;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.Clear();
             Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
 
+            Menu.Start();
 
-            FinalProject.Properties.Menu.Menu.Start();
             SortingCenter sortingCenter = new OddSortingCenter(FinalProject.Properties.Menu.Menu.nbofships, null);
-            Console.ReadKey();
-
-
+            Menu.Start();
             
+            Console.ReadKey();
         }
     }
 }
