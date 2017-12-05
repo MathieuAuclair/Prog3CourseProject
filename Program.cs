@@ -8,6 +8,7 @@ namespace FinalProject
     {
         public static void Main(string[] args)
         {
+
             Console.WindowHeight = 10;
             Console.WindowWidth = 66;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -19,12 +20,7 @@ namespace FinalProject
             FinalProject.Properties.Menu.Menu UnBeauMenu = new Properties.Menu.Menu();
             UnBeauMenu.Start();
             
-
-            
             Console.ReadKey();
-
-
-            
         }
     }
 }

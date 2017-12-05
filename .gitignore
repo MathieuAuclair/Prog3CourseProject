@@ -8,8 +8,8 @@
 #.NET
 bin/
 obj/
+FinalProject.userprefs
 FinalProject.csproj
 
 #visual studio
 .vs/
-

@@ -13,6 +13,9 @@ namespace FinalProject.Properties
         protected int contaminatedSoilCapacity;
         protected int fossilFuelCapacity;
 
+        public SortingCenter PreviouSortingCenter;
+        public SortingCenter NextSortingCenter;
+
         protected Ship shipWaitingLine;
 
         protected int NumberOfShips;
