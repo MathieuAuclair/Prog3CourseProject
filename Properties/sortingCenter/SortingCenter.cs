@@ -7,11 +7,11 @@ namespace FinalProject.Properties
 {
     public abstract class SortingCenter
     {
-        protected int plutoniumCapacity;
-        protected int uraniumCapacity;
-        protected int heavyMetalCapacity;
-        protected int contaminatedSoilCapacity;
-        protected int fossilFuelCapacity;
+        public int plutoniumCapacity;
+        public int uraniumCapacity;
+        public int heavyMetalCapacity;
+        public int contaminatedSoilCapacity;
+        public int fossilFuelCapacity;
 
         public SortingCenter PreviouSortingCenter;
         public SortingCenter NextSortingCenter;
@@ -20,6 +20,7 @@ namespace FinalProject.Properties
         public Ship shipDepartureLine;
 
         protected int NumberOfShips;
+       
 
         public SortingCenter(
             int NumberOfShips,
@@ -28,8 +29,6 @@ namespace FinalProject.Properties
             PreviouSortingCenter = previousCenter;
             shipWaitingLine = new LightShip(null, null);
             this.NumberOfShips = NumberOfShips;
-
-            //Create a amounts of ships
 
             for (int i = 0; i < NumberOfShips; i++)
             {
@@ -50,7 +49,16 @@ namespace FinalProject.Properties
             }
         }
 
-        private void AddNewlyGeneratedShipToPile(Ship ship)
+        public void sendShipToDeparture(){
+            shipWaitingLine = getShipAtIndex(getQuantityOfShipWaiting());
+            Ship ship = shipWaitingLine;
+            shipWaitingLine = ship.NextShip;
+            shipWaitingLine.PreviousShip = null;
+            ship.PreviousShip = null;
+
+        }
+
+        public void AddNewlyGeneratedShipToPile(Ship ship)
         {
             Ship currentShip = shipWaitingLine;
             currentShip.NextShip = ship;
@@ -90,22 +98,69 @@ namespace FinalProject.Properties
             }
         }
 
-        public void storeMatterInCenter(int matterType){
-            switch(matterType){
+        public void releasePlaceForMatterByType(int matterType)
+        {
+            switch (matterType)
+            {
                 case (int)Matter.MatterType.CONTAMINATED_SOIL:
-                    contaminatedSoilCapacity--;
+                    
                     break;
                 case (int)Matter.MatterType.FOSSIL_FUEL:
-                    fossilFuelCapacity--;
+                   
                     break;
                 case (int)Matter.MatterType.HEAVYMETAL:
-                    heavyMetalCapacity--;
+                   
                     break;
                 case (int)Matter.MatterType.PLUTONIUM:
-                    plutoniumCapacity--;
+                   
                     break;
                 case (int)Matter.MatterType.URANIUM:
-                    uraniumCapacity--;
+                   
+                    break;
+            }
+        }
+
+        public void changeMatterStorageInCenter(int matterType, int storage){
+            switch(matterType){
+                case (int)Matter.MatterType.CONTAMINATED_SOIL:
+                    if (contaminatedSoilCapacity > 0)
+                    {
+                        contaminatedSoilCapacity += storage;
+                    } else {
+                        throw new StationOverflowException();
+                    }
+                    break;
+                case (int)Matter.MatterType.FOSSIL_FUEL:
+                    if (fossilFuelCapacity > 0)
+                    {
+                        fossilFuelCapacity += storage;
+                    } else {
+                        throw new StationOverflowException();
+                    }
+                    break;
+                case (int)Matter.MatterType.HEAVYMETAL:
+                    if (heavyMetalCapacity > 0)
+                    {
+                        heavyMetalCapacity += storage;
+                    } else {
+                        throw new StationOverflowException();
+                    }
+                    break;
+                case (int)Matter.MatterType.PLUTONIUM:
+                    if (plutoniumCapacity > 0)
+                    {
+                        plutoniumCapacity += storage;
+                    } else {
+                        throw new StationOverflowException();
+                    }
+                    break;
+                case (int)Matter.MatterType.URANIUM:
+                    if (uraniumCapacity > 0)
+                    {
+                        uraniumCapacity += storage;
+                    } else {
+                        throw new StationOverflowException();
+                    }
                     break;
             }
         }
