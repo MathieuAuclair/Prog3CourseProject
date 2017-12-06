@@ -76,15 +76,23 @@ namespace FinalProject.Properties
             while(sortingCenters.NextSortingCenter != null){
                 int indexOfShip = 0;
                 while(sortingCenters.getShipAtIndex(indexOfShip).NextShip != null){
+                    Ship indexShip = sortingCenters.getShipAtIndex(indexOfShip);
                     indexOfShip++;
 
+                    int indexOfMatter = 0;
+                    while(indexShip.getMatterAtIndex(indexOfMatter).NextMatterCrate != null){
+
+                        Matter matterIndex = indexShip.getMatterAtIndex(indexOfMatter);
+                        indexOfMatter++;
+                        
+                    }
                 }    
 
                 sortingCenters = sortingCenters.NextSortingCenter;
             }
         }
 
-        public void processingData(){
+        public void processData(){
             //need to implement
         }
     }

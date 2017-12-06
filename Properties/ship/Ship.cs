@@ -76,10 +76,15 @@ namespace FinalProject.Properties
             return count;
         }
 
-        public Ship getMatterAtIndex(int index)
+        public Matter getMatterAtIndex(int index)
         {
-            //need to make a loop that count the length
-            return new LightShip();
+            resetStockPile();
+            int count = 0;
+            while(count < index){
+                count++;
+                LoadContent = LoadContent.NextMatterCrate;
+            }
+            return LoadContent;
         }
         
         private void resetStockPile()
