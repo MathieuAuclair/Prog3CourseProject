@@ -17,10 +17,9 @@ namespace FinalProject
             Console.Clear();
 
             Menu.Start();
-
-            SortingCenter sortingCenter = new OddSortingCenter(Menu.nbofships, null);
-            Menu.Start();
-            
+            RecyclingStation station = new RecyclingStation(Menu.nbofsites);
+            station.launchRecyclingProcess();
+            station.processData();
             Console.ReadKey();
         }
     }
