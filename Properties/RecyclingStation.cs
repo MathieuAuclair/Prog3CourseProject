@@ -73,7 +73,15 @@ namespace FinalProject.Properties
         }
 
         public void launchRecyclingProcess(){
-            //need to implement
+            while(sortingCenters.NextSortingCenter != null){
+                int indexOfShip = 0;
+                while(sortingCenters.getShipAtIndex(indexOfShip).NextShip != null){
+                    indexOfShip++;
+
+                }    
+
+                sortingCenters = sortingCenters.NextSortingCenter;
+            }
         }
 
         public void processingData(){

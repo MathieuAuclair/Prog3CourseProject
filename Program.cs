@@ -19,7 +19,7 @@ namespace FinalProject
             Menu.Start();
             RecyclingStation station = new RecyclingStation(Menu.nbofsites);
             station.launchRecyclingProcess();
-            //station.processData();
+            station.processData();
             Console.ReadKey();
         }
     }
