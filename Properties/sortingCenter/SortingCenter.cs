@@ -17,7 +17,7 @@ namespace FinalProject.Properties
         public SortingCenter NextSortingCenter;
 
         protected Ship shipWaitingLine;
-        protected Ship shipDepartureLine;
+        public Ship shipDepartureLine;
 
         protected int NumberOfShips;
 
@@ -25,6 +25,7 @@ namespace FinalProject.Properties
             int NumberOfShips,
             SortingCenter previousCenter)
         {
+            PreviouSortingCenter = previousCenter;
             shipWaitingLine = new LightShip(null, null);
             this.NumberOfShips = NumberOfShips;
 
@@ -81,12 +82,31 @@ namespace FinalProject.Properties
             return shipWaitingLine;
         }
 
-
         private void resetShipPile()
         {
             while (shipWaitingLine.PreviousShip != null)
             {
                 shipWaitingLine = shipWaitingLine.PreviousShip;
+            }
+        }
+
+        public void storeMatterInCenter(int matterType){
+            switch(matterType){
+                case (int)Matter.MatterType.CONTAMINATED_SOIL:
+                    contaminatedSoilCapacity--;
+                    break;
+                case (int)Matter.MatterType.FOSSIL_FUEL:
+                    fossilFuelCapacity--;
+                    break;
+                case (int)Matter.MatterType.HEAVYMETAL:
+                    heavyMetalCapacity--;
+                    break;
+                case (int)Matter.MatterType.PLUTONIUM:
+                    plutoniumCapacity--;
+                    break;
+                case (int)Matter.MatterType.URANIUM:
+                    uraniumCapacity--;
+                    break;
             }
         }
     }

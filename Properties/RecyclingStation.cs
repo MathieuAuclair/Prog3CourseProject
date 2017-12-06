@@ -73,23 +73,26 @@ namespace FinalProject.Properties
         }
 
         public void launchRecyclingProcess(){
-            while(sortingCenters.NextSortingCenter != null){
+            do
+            {
                 int indexOfShip = 0;
-                while(sortingCenters.getShipAtIndex(indexOfShip).NextShip != null){
-                    Ship indexShip = sortingCenters.getShipAtIndex(indexOfShip);
+                do
+                {
                     indexOfShip++;
+                    Ship indexShip = sortingCenters.getShipAtIndex(indexOfShip);
 
                     int indexOfMatter = 0;
-                    while(indexShip.getMatterAtIndex(indexOfMatter).NextMatterCrate != null){
-
-                        Matter matterIndex = indexShip.getMatterAtIndex(indexOfMatter);
+                    do
+                    {
                         indexOfMatter++;
-                        
-                    }
-                }    
-
+                        Matter matterIndex = indexShip.getMatterAtIndex(indexOfMatter);
+                        //add tryCatch if center is filled
+                        sortingCenters.storeMatterInCenter(matterIndex.matterInQuestion);
+                    } while (indexShip.getMatterAtIndex(indexOfMatter).NextMatterCrate != null);
+                    //need to set ship in waiting line
+                } while (sortingCenters.getShipAtIndex(indexOfShip).NextShip != null);
                 sortingCenters = sortingCenters.NextSortingCenter;
-            }
+            } while (sortingCenters.NextSortingCenter != null);
         }
 
         public void processData(){
