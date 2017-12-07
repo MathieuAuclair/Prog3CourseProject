@@ -3,6 +3,7 @@
     public interface IShip
     {
         int getQuantityOfMatterCrate();
-        Ship getMatterAtIndex(int index);
+        void addMatterCrateToShip(Matter matter);
+        Matter getMatterAtIndex(int index);
     }
 }

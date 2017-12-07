@@ -1,8 +1,4 @@
-﻿using System.Runtime.Serialization.Formatters;
-using FinalProject.Properties.Interface;
-using System.Runtime.Serialization.Formatters;
-using System.ComponentModel;
-﻿using System;
+﻿using FinalProject.Properties.Interface;
 
 
 namespace FinalProject.Properties
@@ -15,7 +11,7 @@ namespace FinalProject.Properties
             CARGO_SHIP
         }
 
-        protected float Capacity;
+        public float Capacity;
         protected Matter LoadContent;
 
         public Ship NextShip;
@@ -27,6 +23,16 @@ namespace FinalProject.Properties
             PreviousShip = previousShip;
         }
 
+
+        void removeMatterFromPile()
+        {
+            //get last index 
+            int index = getQuantityOfMatterCrate();
+            LoadContent = getMatterAtIndex(index);
+            LoadContent = LoadContent.PreviousMatterCrate;
+            LoadContent.NextMatterCrate = null;
+        } 
+		   
         protected void FillShipWithMatter()
         {
             LoadContent = new Plutonium(null, null);
