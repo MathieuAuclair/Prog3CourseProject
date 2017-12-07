@@ -8,7 +8,7 @@ namespace FinalProject.Properties.Menu
 {
     public static class Menu
     {
-        public static int nbofShipsPerSites=0;
+        public static int nbofShipsPerSites;
         public static int nbofships =0;
         public static int nbofsites = 0;
        
@@ -90,7 +90,7 @@ namespace FinalProject.Properties.Menu
                  string okay1;
                  okay1 = Console.ReadLine();
                  ValidateNumber(okay1);
-                 nbofsites = Convert.ToInt32(okay1);
+                 nbofships = Convert.ToInt32(okay1);
                 }
                 catch (InvalidNumberException ex)
                 {
@@ -118,10 +118,11 @@ namespace FinalProject.Properties.Menu
                 Console.WriteLine("        =====================================                        ");
                 Console.WriteLine("                                                                     ");
                 Console.WriteLine("        Nombre de site       : "+nbofsites+"                         ");
+                Console.WriteLine("                                                                     ");
                 Console.WriteLine("        Nombre de vaisseau   : "+nbofships+"                         ");
                 Console.WriteLine("                                                                     ");
                 Console.WriteLine("        =====================================                        ");
-
+                nbofShipsPerSites = nbofships / nbofsites;
             }
         }
         public static void speach(string msg)

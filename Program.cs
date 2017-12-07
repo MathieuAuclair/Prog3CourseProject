@@ -17,7 +17,8 @@ namespace FinalProject
             Console.Clear();
 
             Menu.Start(1);
-            RecyclingStation station = new RecyclingStation(Menu.nbofsites);
+
+            RecyclingStation station = new RecyclingStation(Menu.nbofShipsPerSites);
             station.launchRecyclingProcess();
             station.processData();
             Console.ReadKey();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace FinalProject.Properties
 {
@@ -14,19 +15,22 @@ namespace FinalProject.Properties
 
 		public RecyclingStation(int stationSize)
 		{
-			sortingCenters = new EvenSortingCenter(stationSize, null);
-			Menu.Menu.speach("----------Creation d'un centre de tri pair ");
-			for (int i = 0; i < stationSize; i++)
+            Menu.Menu.speach("Creation d'un centre de tri pair ");
+            Thread.Sleep(200);
+            sortingCenters = new EvenSortingCenter(stationSize, null);
+            for (int i = 1; i < Menu.Menu.nbofsites; i++)
 			{
 				switch (RandomGenerator.getRandomInt(0, 2))
 				{
 					case (int)SortingCenterType.EVEN_CENTER:
-						Menu.Menu.speach("----------Creation d'un centre de tri pair");
-						AddNewlyGeneratedSortingCenterToPile(new EvenSortingCenter(Menu.Menu.nbofships, null));
+						Menu.Menu.speach("Creation d'un centre de tri pair");
+                        Thread.Sleep(200);
+                        AddNewlyGeneratedSortingCenterToPile(new EvenSortingCenter(stationSize, null));
 						break;
 					case (int)SortingCenterType.ODD_CENTER:
-						Menu.Menu.speach("----------Creation d'un centre de tri impair");
-						AddNewlyGeneratedSortingCenterToPile(new OddSortingCenter(Menu.Menu.nbofships, null));
+						Menu.Menu.speach("Creation d'un centre de tri impair");
+                        Thread.Sleep(200);
+                        AddNewlyGeneratedSortingCenterToPile(new OddSortingCenter(stationSize, null));
 						break;
 				}
 			}
