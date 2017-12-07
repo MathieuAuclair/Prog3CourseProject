@@ -11,27 +11,19 @@ namespace FinalProject.Properties.Menu
         public static int nbofShipsPerSites=0;
         public static int nbofships =0;
         public static int nbofsites = 0;
-        public static void whileRunning()
-        {
-            Console.WriteLine("Step 1 : {0}");
-        }
+       
         private static void ValidateNumber(string std)
         {
             Regex regex = new Regex("^([1-9][0-9]{0,2}|1000)$");
 
-            if (std != null)
-            {
-                if (regex.IsMatch(std))
-                {
-                    return;
-                }
-            }
-            
-            throw new InvalidNumberException(std);
+            if (!regex.IsMatch(std))
+                throw new InvalidNumberException(std);
 
         }
-        public static void Start()
+        public static void Start(int step)
         {
+            if(step == 1)
+            {
             Console.WriteLine("                                                                     ");
             Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
             Console.WriteLine("        =====================================                        ");
@@ -48,42 +40,102 @@ namespace FinalProject.Properties.Menu
             Console.SetCursorPosition(31, 4);
             try
             {
-                nbofsites = Convert.ToInt32(Console.ReadLine());
-                speach("");
+                string data1 = Console.ReadLine();
+                ValidateNumber(data1);
+                nbofsites = Convert.ToInt32(data1);
+                Start(2);
             }
-            catch (Exception e)
+            catch (InvalidNumberException ex)
             {
-                Console.WriteLine("you made a typo...");
-                Console.ReadKey();
-                Start();
-            }
+                Console.Clear();
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de site       : ____                                  ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de vaisseau   : ____                                  ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine(ex.Message);
+    
+                Console.ReadLine();
 
-            Console.SetCursorPosition(31, 6);
-            try
-            {
-                nbofsites = Convert.ToInt32(Console.ReadLine());
-                speach("");
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("you made a typo...");
-                Console.ReadKey();
-                Start();
-            }
+                Console.Clear();
 
+                Start(1); // u failed at step 1 , try step 1 again faggotlord /$%?&$
+                }
+            }
+            if(step==2)
+            {
+                Console.Clear();
+
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de site       : "+nbofsites+"                         ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de vaisseau   : ____          PRESS ENTER             ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine("        'Saving the fucking universe'                                ");
+
+
+
+                Console.SetCursorPosition(31, 6);
+
+                try
+                {
+                 string okay1;
+                 okay1 = Console.ReadLine();
+                 ValidateNumber(okay1);
+                 nbofsites = Convert.ToInt32(okay1);
+                }
+                catch (InvalidNumberException ex)
+                {
+                    Console.Clear();
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                    Console.WriteLine("        =====================================                        ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        Nombre de site       : "+nbofsites+"                         ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        Nombre de vaisseau   : ____                                  ");
+                    Console.WriteLine("                                                                     ");
+                    Console.WriteLine("        =====================================                        ");
+                    Console.WriteLine(ex.Message);
+
+                    Console.ReadLine();
+
+                    Console.Clear();
+
+                    Start(2); // u failed at step 2 , try step 2 again faggotlord /$%?&$
+
+                }
+                Console.Clear();
+                Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
+                Console.WriteLine("        =====================================                        ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        Nombre de site       : "+nbofsites+"                         ");
+                Console.WriteLine("        Nombre de vaisseau   : "+nbofships+"                         ");
+                Console.WriteLine("                                                                     ");
+                Console.WriteLine("        =====================================                        ");
+
+            }
         }
-
         public static void speach(string msg)
         {
             Console.Clear();
-            Console.WriteLine("                                                                     ");
             Console.WriteLine("        LOGICIEL DE GESTION DE DÉCHET TOXIQUE                        ");
-            Console.WriteLine("        -------------------------------------                        ");
-            Console.WriteLine("        Nombre de site       : " + nbofsites + "                     ");
+            Console.WriteLine("        =====================================                        ");
             Console.WriteLine("                                                                     ");
-            Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                     ");
+            Console.WriteLine("        Nombre de site       : " + nbofsites + "                         ");
             Console.WriteLine("                                                                     ");
-            Console.WriteLine("        -------------------------------------                        ");
+            Console.WriteLine("        Nombre de vaisseau   : " + nbofships + "                         ");
+            Console.WriteLine("                                                                     ");
+            Console.WriteLine("        =====================================                        ");
+
             Console.WriteLine(msg);
             Thread.Sleep(50);
         }

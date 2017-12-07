@@ -16,7 +16,7 @@ namespace FinalProject
             Console.BackgroundColor = ConsoleColor.White;
             Console.Clear();
 
-            Menu.Start();
+            Menu.Start(1);
             RecyclingStation station = new RecyclingStation(Menu.nbofsites);
             station.launchRecyclingProcess();
             station.processData();
