@@ -55,6 +55,7 @@
     <Compile Include="Properties\matter\Matter.cs" />
     <Compile Include="Properties\matter\Plutonium.cs" />
     <Compile Include="Properties\matter\Uranium.cs" />
+    <Compile Include="Properties\Menu\InvalidNumberException.cs" />
     <Compile Include="Properties\Menu\Menu.cs" />
     <Compile Include="Properties\RecyclingStation.cs" />
     <Compile Include="Properties\ship\CargoShip.cs" />
@@ -65,14 +66,9 @@
     <Compile Include="Properties\sortingCenter\SortingCenter.cs" />
     <Compile Include="Properties\utils\unitTest\GeneralUnitTest.cs" />
     <Compile Include="Properties\utils\RandomGenerator.cs" />
-    <Compile Include="Properties\Exception\InvalidNumberException.cs" />
-    <Compile Include="Properties\Exception\StationOverflowException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\Exception\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
